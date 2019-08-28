@@ -1,1 +1,8 @@
-<p>switcher works!</p>
+<div class="wrapper">
+  <button mat-button [matMenuTriggerFor]="menu">{{ 'LANG' | translate }}</button>
+  <mat-menu #menu="matMenu">
+    <button (click)="switchLang('en')" value="en" mat-menu-item>EN</button>
+    <button (click)="switchLang('ru')" value="ru" mat-menu-item>RU</button>
+  </mat-menu>
+  <mat-hint>{{ 'DESCRIPTION' | translate }}</mat-hint>
+</div>

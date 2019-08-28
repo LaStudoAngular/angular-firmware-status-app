@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+  }
+
+  & .mat-hint {
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 10px;
+  }
+
+  & .mat-button:hover ~ .mat-hint {
+    opacity: 1;
+    visibility: visible;
+  }
+}
