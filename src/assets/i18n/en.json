@@ -1,0 +1,14 @@
+{
+  "BUTTON": "Show status",
+  "PLACEHOLDER": "Enter IMEI",
+  "LANG": "EN",
+  "HINT": "Not more then 15 characters long",
+  "REQUIRED": "IMEI is required",
+  "MAXLENGTH": "You have more than 15 characters",
+  "UPDATE": "Device update in progress",
+  "NOT_FOUND": "No device data found",
+  "SERVER_ERROR": "Server side error, try again",
+  "NO_UPDATE": "Device update not available",
+  "TITLE": "Device update status",
+  "DESCRIPTION": "Change the language"
+}
