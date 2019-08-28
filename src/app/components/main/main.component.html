@@ -1,1 +1,26 @@
-<p>main works!</p>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="form-field">
+    <input name="name" formControlName="imei" matInput [placeholder]="'PLACEHOLDER' | translate" />
+    <button *ngIf="form.get('imei').value" (click)="onClearInput()" mat-button matSuffix mat-icon-button>
+      <mat-icon>clear</mat-icon>
+    </button>
+    <mat-hint>{{ 'HINT' | translate }}</mat-hint>
+    <mat-error *ngIf="form.get('imei').errors?.required">{{ 'REQUIRED' | translate }}</mat-error>
+    <mat-error *ngIf="form.get('imei').errors?.maxlength">{{ 'MAXLENGTH' | translate }}</mat-error>
+  </mat-form-field>
+  <button class="form-button" mat-raised-button color="primary" [disabled]="!form.get('imei').valid">{{ 'BUTTON' | translate }}</button>
+</form>
+
+<section class="messages" [ngSwitch]="progress.message">
+  <mat-hint *ngSwitchCase="'UPDATE'">{{ 'UPDATE' | translate }}</mat-hint>
+  <mat-hint *ngSwitchCase="'NO_UPDATE'">{{ 'NO_UPDATE' | translate }}</mat-hint>
+  <mat-hint class="messages--warning" *ngSwitchCase="'NOT_FOUND'">{{ 'NOT_FOUND' | translate }}</mat-hint>
+  <mat-hint class="messages--warning" *ngSwitchCase="'SERVER_ERROR'">{{ 'SERVER_ERROR' | translate }}</mat-hint>
+</section>
+
+<section *ngIf="progress.show" class="progress">
+  <mat-progress-bar class="progress-bar" color="primary" mode="determinate" [value]="progress.value"
+                    [bufferValue]="bufferValue">
+  </mat-progress-bar>
+  <p class="progress-value">{{ progress.value | round }}%</p>
+</section>
