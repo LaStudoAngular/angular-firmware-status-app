@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 40px;
+  padding-top: 20px;
+  border-top: 2px solid rgba($color: #000000, $alpha: .2);
+
+  & .footer-wrapper {
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    padding: 0 15px;
+  }
+
+  & .footer-address {
+    font-size: 13px;
+    color: rgba(black, 0.54);
+  }
+
+  & .footer-link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
